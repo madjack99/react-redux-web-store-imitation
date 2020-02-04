@@ -2,7 +2,7 @@ import React from 'react';
 import BookList from '../book-list';
 
 const HomePage = () => {
-  return <BookList books={[]} />;
+  return <BookList />;
 };
 
 export default HomePage;
