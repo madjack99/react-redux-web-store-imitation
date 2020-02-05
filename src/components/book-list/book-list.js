@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import compose from '../../utils';
 import BookListItem from '../book-list-item';
 import withBookstoreService from '../hoc';
+import Spinner from '../spinner';
 import { booksLoaded } from '../../actions';
 
 import './book-list.css';
@@ -17,7 +18,10 @@ class BookList extends Component {
   }
 
   render() {
-    const { books } = this.props;
+    const { books, loading } = this.props;
+
+    if (loading) return <Spinner />;
+
     return (
       <ul className="book-list">
         {books.map(book => {
@@ -32,9 +36,10 @@ class BookList extends Component {
   }
 }
 
-const mapStateToProps = ({ books }) => {
+const mapStateToProps = ({ books, loading }) => {
   return {
     books,
+    loading,
   };
 };
 
