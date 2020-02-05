@@ -10,8 +10,10 @@ import './book-list.css';
 class BookList extends Component {
   componentDidMount() {
     const { bookstoreService, booksLoaded } = this.props;
-    const data = bookstoreService.getBooks();
-    booksLoaded(data);
+    bookstoreService
+      .getBooks()
+      .then(data => booksLoaded(data))
+      .catch(err => console.log(err));
   }
 
   render() {
