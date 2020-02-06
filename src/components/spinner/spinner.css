@@ -1,0 +1,8 @@
+.spinner-container {
+  display: flex;
+}
+
+.spinner {
+  width: 200px;
+  margin: auto;
+}
