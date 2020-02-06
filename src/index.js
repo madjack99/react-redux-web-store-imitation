@@ -12,8 +12,6 @@ import store from './store';
 
 const bookstoreService = new BookstoreService();
 
-console.log('test');
-
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundary>
